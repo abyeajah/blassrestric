@@ -1,130 +1,276 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unrestrict Fads — Demo</title>
-  <meta name="description" content="Contoh landing page mirip unrestrictfads.pages.dev">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial Unrestrict LinkedIn</title>
+  <meta name="description" content="Panduan lengkap cara mengajukan banding akun LinkedIn yang terkena restricted dengan berbagai form resmi.">
   <style>
-    /* ===== Reset & dasar ===== */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;font-family:Inter, system-ui, -apple-system, "Helvetica Neue", Arial; background:linear-gradient(180deg,#0f172a 0%, #071024 100%); color:#e6eef8}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:48px 20px}
-
-    /* ===== Header ===== */
-    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{
-      width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#06b6d4);
-      display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:18px;box-shadow:0 6px 20px rgba(2,6,23,0.6)
+    :root {
+      --linkedin-blue: #0077B5;
+      --linkedin-dark-blue: #004182;
+      --linkedin-light-blue: #EFF6FA;
+      --linkedin-gray: #e0e0e0;
     }
-    nav{display:flex;gap:18px;align-items:center}
-    .btn{background:#06b6d4;color:#07203a;padding:10px 14px;border-radius:10px;font-weight:600;box-shadow:0 8px 20px rgba(6,182,212,0.18)}
-    .ghost{border:1px solid rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px}
 
-    /* ===== Hero ===== */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:48px 0}
-    .headline{font-size:40px;line-height:1.02;margin-bottom:14px;font-weight:800}
-    .sub{color:rgba(230,238,248,0.75);margin-bottom:22px;font-size:16px}
-    .cta-row{display:flex;gap:12px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); padding:20px;border-radius:14px;box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+    body {
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #333;
+      background-color: white;
+    }
 
-    /* mockup */
-    .mockup{height:380px;border-radius:14px;background:linear-gradient(180deg,#061122, #012238);display:flex;align-items:center;justify-content:center;color:#9ee7ff;border:1px solid rgba(255,255,255,0.03)}
+    /* Banner */
+    .top-banner {
+      background-color: var(--linkedin-dark-blue);
+      color: white;
+      padding: 12px 0;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .scrolling-text {
+      white-space: nowrap;
+      animation: scrollText 20s linear infinite;
+      font-weight: 600;
+      font-size: 16px;
+      display: inline-block;
+      padding-left: 100%;
+    }
+    @keyframes scrollText {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
 
-    /* ===== Features ===== */
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-    .feature{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+    /* Header */
+    .header { text-align: center; margin: 20px 0; }
+    .logo {
+      width: 300px;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .logo:hover { transform: scale(1.02); }
 
-    /* responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr; padding-bottom:12px}
-      .features{grid-template-columns:1fr}
-      .mockup{height:260px}
-      .headline{font-size:28px}
+    /* Floating CS Button */
+    .customer-service {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      animation: float 3s ease-in-out infinite;
+    }
+    .cs-icon {
+      height: 70px;
+      width: 70px;
+      cursor: pointer;
+      transition: all 0.3s;
+      filter: drop-shadow(0 0 10px rgba(0, 119, 181, 0.5));
+      border-radius: 50%;
+    }
+    .cs-icon:hover {
+      transform: scale(1.15) rotate(12deg);
+      filter: drop-shadow(0 0 15px rgba(0, 119, 181, 0.7));
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(-50%) translateY(0px); }
+      50% { transform: translateY(-50%) translateY(-18px); }
+    }
+
+    /* Content */
+    h1 {
+      color: var(--linkedin-blue);
+      text-align: center;
+      margin: 20px 0;
+      font-weight: 500;
+      font-size: 32px;
+    }
+    h2 {
+      color: var(--linkedin-dark-blue);
+      font-weight: 500;
+      margin-top: 30px;
+      font-size: 24px;
+      border-bottom: 1px solid var(--linkedin-gray);
+      padding-bottom: 8px;
+    }
+    h3 {
+      color: var(--linkedin-dark-blue);
+      font-weight: 500;
+      font-size: 20px;
+      margin-top: 25px;
+    }
+
+    .terms-box {
+      background-color: #fff3e0;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #ffa000;
+      margin: 0 auto 30px;
+      font-size: 14px;
+      max-width: 800px;
+    }
+    .terms-title { color: #d32f2f; font-weight: 600; margin-bottom: 10px; text-align:center; }
+
+    .option-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .option-btn {
+      background-color: white;
+      color: var(--linkedin-blue);
+      border: 1px solid var(--linkedin-blue);
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s;
+      min-width: 160px;
+      text-align: center;
+    }
+    .option-btn:hover { background-color: var(--linkedin-light-blue); }
+    .option-btn.active { background-color: var(--linkedin-blue); color: white; }
+
+    .content-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--linkedin-gray);
+      margin-bottom: 30px;
+      opacity: 0;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+    .content-section.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+      margin-top: 5px;
+      padding: 10px;
+      background-color: #fff8e1;
+      border-left: 3px solid #ffc107;
+    }
+    .warning {
+      font-size: 14px;
+      color: #d32f2f;
+      font-weight: 500;
+      margin: 15px 0;
+      background-color: #ffebee;
+      padding: 10px;
+      border-radius: 4px;
+      border-left: 3px solid #d32f2f;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .logo { width: 220px; }
+      .customer-service {
+        top: auto; bottom: 20px; right: 15px;
+        animation: float-mobile 3s ease-in-out infinite;
+      }
+      @keyframes float-mobile {
+        0%,100%{ transform:translateY(0);}
+        50%{ transform:translateY(-10px);}
+      }
+      .cs-icon { height: 60px; width: 60px; }
+      .option-container { flex-direction: column; }
+      .option-btn { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">UF</div>
-        <div>
-          <div style="font-weight:700">Unrestrict Fads</div>
-          <div style="font-size:12px;color:rgba(230,238,248,0.6)">Tools &amp; resources</div>
-        </div>
-      </div>
-      <nav>
-        <a class="ghost" href="#">Docs</a>
-        <a class="ghost" href="#">Pricing</a>
-        <a class="btn" href="#">Mulai</a>
-      </nav>
-    </header>
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <div class="scrolling-text">
+      💫 LinkedIn by Fads 📢 Jika akun terkena restrict dan berhasil dipulihkan, Anda berhak mendapatkan bonus $5 pada payment berikutnya (1x) 💫
+    </div>
+  </div>
 
-    <main>
-      <section class="hero">
-        <div>
-          <h1 class="headline">Percepat akses & optimalkan performa konten kamu</h1>
-          <p class="sub">Satu paket tools untuk bypass batasan, mempercepat distribusi, dan mengelola aset digital. Ringan, cepat, dan aman.</p>
-          <div class="cta-row">
-            <a class="btn" href="#" id="primary-action">Coba Gratis</a>
-            <a class="ghost" href="#" id="learn-more">Pelajari</a>
-          </div>
+  <!-- Header -->
+  <div class="header">
+    <img src="logo_saya.png" alt="Logo Unrestrict LinkedIn" class="logo">
+  </div>
 
-          <div class="features" style="margin-top:26px">
-            <div class="feature card">
-              <strong>Fast Delivery</strong>
-              <p style="font-size:13px;color:rgba(230,238,248,0.65);margin-top:8px">Cache pintar untuk latensi rendah dan throughput tinggi.</p>
-            </div>
-            <div class="feature card">
-              <strong>Secure</strong>
-              <p style="font-size:13px;color:rgba(230,238,248,0.65);margin-top:8px">Proteksi trafik dan enkripsi end-to-end.</p>
-            </div>
-            <div class="feature card">
-              <strong>Easy Integrate</strong>
-              <p style="font-size:13px;color:rgba(230,238,248,0.65);margin-top:8px">Integrasi simpel lewat API dan widget.</p>
-            </div>
-          </div>
-        </div>
+  <!-- Floating Customer Service -->
+  <div class="customer-service">
+    <a href="https://chat.whatsapp.com/BtUAmfwPrHn4SMxQJ56RmN?mode=ems_copy_c" target="_blank">
+      <img src="logo_cust.png" alt="Customer Service" class="cs-icon" title="Hubungi Customer Service">
+    </a>
+  </div>
 
-        <aside>
-          <div class="mockup card" id="mockup">
-            <div style="text-align:center">
-              <div style="font-size:28px;font-weight:700">Demo Preview</div>
-              <div style="font-size:12px;color:rgba(158,231,255,0.8);margin-top:8px">Live metrics • Traffic • Uptime</div>
-            </div>
-          </div>
-        </aside>
-      </section>
-    </main>
+  <!-- Main -->
+  <div class="main-content">
+    <h1>Tutorial Unrestrict LinkedIn</h1>
 
-    <footer style="margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center">
-      <div style="font-size:13px;color:rgba(230,238,248,0.6)">© <span id="year"></span> Unrestrict Fads</div>
-      <div style="font-size:13px;color:rgba(230,238,248,0.6)">Made with ♥</div>
-    </footer>
+    <div class="terms-box">
+      <div class="terms-title">S&K: Mohon dimengerti</div>
+      <ul>
+        <li>Pilih Salah Satu Form dibawah ❗</li>
+        <li>Semua form tujuannya sama: pengaduan</li>
+        <li>Jangan spam, akan menambah durasi restrict</li>
+        <li>Proses butuh 5–14 hari kerja</li>
+        <li>Terimakasih, semangat 🙌</li>
+      </ul>
+    </div>
+
+    <!-- Tabs -->
+    <div class="option-container">
+      <button class="option-btn active" onclick="showContent('form1', this)">Form Unrestrict 1</button>
+      <button class="option-btn" onclick="showContent('form2', this)">Form Unrestrict 2</button>
+      <button class="option-btn" onclick="showContent('form3', this)">Form Unrestrict 3</button>
+      <button class="option-btn" onclick="showContent('form4', this)">Form Unrestrict 4</button>
+    </div>
+
+    <!-- Example Sections -->
+    <div id="form1" class="content-section active">
+      <h2>Tutorial Open Restrict (Form 1)</h2>
+      <div class="warning">Contoh pesan harus diubah agar tidak terdeteksi spam.</div>
+      <p><b>Reset Password:</b> Coba melalui <a href="https://www.linkedin.com/uas/request-password-reset" target="_blank">tautan reset password</a>.</p>
+    </div>
+
+    <div id="form2" class="content-section">
+      <h2>Form Pengaduan (Form 2)</h2>
+      <p>Gunakan tautan resmi: <a href="https://www.linkedin.com/help/linkedin/ask/ppq" target="_blank">Form Unrestrict 2</a></p>
+    </div>
+
+    <div id="form3" class="content-section">
+      <h2>Formulir Unrestrict (Form 3)</h2>
+      <p>Tautan: <a href="https://www.linkedin.com/help/linkedin/ask/TS-RHA" target="_blank">Form Unrestrict 3</a></p>
+    </div>
+
+    <div id="form4" class="content-section">
+      <h2>Akun Restricted (Form 4)</h2>
+      <p>Ajukan banding via <a href="https://www.linkedin.com/help/linkedin/ask/ts-f-appeal" target="_blank">tautan appeal</a>.</p>
+    </div>
   </div>
 
   <script>
-    // Small interactive script
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    document.getElementById('primary-action').addEventListener('click', function(e){
-      e.preventDefault();
-      alert('Terima kasih! Demo registrasi belum diaktifkan di template ini.');
-    });
-
-    // Simple mockup animation: change background gradient slowly
-    const mockup = document.getElementById('mockup');
-    let t = 0;
-    setInterval(()=> {
-      t += 0.01;
-      const r1 = Math.floor(60 + 40 * Math.sin(t*0.9));
-      const g1 = Math.floor(80 + 60 * Math.sin(t*1.1));
-      const b1 = Math.floor(140 + 60 * Math.cos(t*0.7));
-      mockup.style.background = `linear-gradient(180deg, rgb(${r1},${g1},${b1}), #012238)`;
-    }, 50);
+    function showContent(contentId, clickedButton) {
+      // hide all sections
+      document.querySelectorAll('.content-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      // reset buttons
+      document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      // show selected
+      document.getElementById(contentId).classList.add('active');
+      clickedButton.classList.add('active');
+    }
   </script>
 </body>
 </html>
