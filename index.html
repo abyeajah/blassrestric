@@ -1,256 +1,130 @@
-<div class="main-content">
-        <h1>Tutorial Unrestrict LinkedIn</h1>
-        
-        <!-- Terms and Conditions Box -->
-        <div class="terms-box">
-            <div class="terms-title">
-                <span>S&amp;K: Mohon dimengerti</span>
-            </div>
-            <ul class="terms-list">
-                <li>Pilih Salah Satu Form dibawah ❗</li>
-                <li>Setiap form sama aja, yaitu melakukan pengaduan</li>
-                <li>Jangan spam form, yang akan menambah durasi restric kalian lebih lama</li>
-                <li>Harus lebih sabar, karna setiap case yang berjalan, perlu waktu 5 - 14 hari kerja untuk menyelesaikan laporan kalian</li>
-                <li>Terimakasih, semangat guys 🙌</li>
-            </ul>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unrestrict Fads — Demo</title>
+  <meta name="description" content="Contoh landing page mirip unrestrictfads.pages.dev">
+  <style>
+    /* ===== Reset & dasar ===== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter, system-ui, -apple-system, "Helvetica Neue", Arial; background:linear-gradient(180deg,#0f172a 0%, #071024 100%); color:#e6eef8}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:48px 20px}
+
+    /* ===== Header ===== */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#06b6d4);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:18px;box-shadow:0 6px 20px rgba(2,6,23,0.6)
+    }
+    nav{display:flex;gap:18px;align-items:center}
+    .btn{background:#06b6d4;color:#07203a;padding:10px 14px;border-radius:10px;font-weight:600;box-shadow:0 8px 20px rgba(6,182,212,0.18)}
+    .ghost{border:1px solid rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px}
+
+    /* ===== Hero ===== */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:48px 0}
+    .headline{font-size:40px;line-height:1.02;margin-bottom:14px;font-weight:800}
+    .sub{color:rgba(230,238,248,0.75);margin-bottom:22px;font-size:16px}
+    .cta-row{display:flex;gap:12px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); padding:20px;border-radius:14px;box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+
+    /* mockup */
+    .mockup{height:380px;border-radius:14px;background:linear-gradient(180deg,#061122, #012238);display:flex;align-items:center;justify-content:center;color:#9ee7ff;border:1px solid rgba(255,255,255,0.03)}
+
+    /* ===== Features ===== */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .feature{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; padding-bottom:12px}
+      .features{grid-template-columns:1fr}
+      .mockup{height:260px}
+      .headline{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">UF</div>
+        <div>
+          <div style="font-weight:700">Unrestrict Fads</div>
+          <div style="font-size:12px;color:rgba(230,238,248,0.6)">Tools &amp; resources</div>
         </div>
-        
-        <div class="option-container">
-            <button class="option-btn active" onclick="showContent('form1', this)">Form Unrestrict 1</button>
-            <button class="option-btn" onclick="showContent('form2', this)">Form Unrestrict 2</button>
-            <button class="option-btn" onclick="showContent('form3', this)">Form Unrestrict 3</button>
-            <button class="option-btn" onclick="showContent('form4', this)">Form Unrestrict 4</button>
+      </div>
+      <nav>
+        <a class="ghost" href="#">Docs</a>
+        <a class="ghost" href="#">Pricing</a>
+        <a class="btn" href="#">Mulai</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1 class="headline">Percepat akses & optimalkan performa konten kamu</h1>
+          <p class="sub">Satu paket tools untuk bypass batasan, mempercepat distribusi, dan mengelola aset digital. Ringan, cepat, dan aman.</p>
+          <div class="cta-row">
+            <a class="btn" href="#" id="primary-action">Coba Gratis</a>
+            <a class="ghost" href="#" id="learn-more">Pelajari</a>
+          </div>
+
+          <div class="features" style="margin-top:26px">
+            <div class="feature card">
+              <strong>Fast Delivery</strong>
+              <p style="font-size:13px;color:rgba(230,238,248,0.65);margin-top:8px">Cache pintar untuk latensi rendah dan throughput tinggi.</p>
+            </div>
+            <div class="feature card">
+              <strong>Secure</strong>
+              <p style="font-size:13px;color:rgba(230,238,248,0.65);margin-top:8px">Proteksi trafik dan enkripsi end-to-end.</p>
+            </div>
+            <div class="feature card">
+              <strong>Easy Integrate</strong>
+              <p style="font-size:13px;color:rgba(230,238,248,0.65);margin-top:8px">Integrasi simpel lewat API dan widget.</p>
+            </div>
+          </div>
         </div>
-        
-        <!-- Form Unrestrict 1 Content -->
-        <div id="form1" class="content-section">
-            <h2>Tutorial Open Restrict (Form 1)</h2>
-            
-            <div class="warning">
-                Harap dipahami! Ini hanyalah contoh, kata-kata tidak boleh sama dengan admin, harus ada yang dirubah dan dikembangkan lagi kata-katanya untuk menghindari spam.
+
+        <aside>
+          <div class="mockup card" id="mockup">
+            <div style="text-align:center">
+              <div style="font-size:28px;font-weight:700">Demo Preview</div>
+              <div style="font-size:12px;color:rgba(158,231,255,0.8);margin-top:8px">Live metrics • Traffic • Uptime</div>
             </div>
-            
-            <ol>
-                <li>
-                    <b>Reset Password</b>: Coba ke halaman change password melalui link ini 
-                    <a href="https://www.linkedin.com/uas/request-password-reset" target="_blank">https://www.linkedin.com/uas/request-password-reset</a>.
-                    <div class="note">Anda akan diminta verifikasi identitas (KYC). Jika berhasil, Anda akan menerima email konfirmasi. Proses ini memakan waktu 24-72 jam tergantung akun.</div>
-                </li>
-                
-                <li>
-                    <b>Form Pengaduan</b>: Jika langkah pertama tidak berhasil, isi form pengaduan di 
-                    <a href="https://lnkd.in/gfTvtQAY" target="_blank">https://lnkd.in/gfTvtQAY</a>
-                </li>
-                
-                <li>
-                    <b>Hubungi Support</b>: Kirim DM ke media sosial LinkedIn:
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/linkedin?igsh=OG54NHM1azRlN3My" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon">
-                            Instagram
-                        </a>
-                        <a href="https://www.facebook.com/share/16vVVrzcRR/" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="social-icon">
-                            Facebook
-                        </a>
-                        <a href="https://x.com/LinkedInHelp?t=RfGkWEYIkaci9mjQEXK6lQ&amp;s=09" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter" class="social-icon">
-                            Twitter
-                        </a>
-                    </div>
-                    <div class="note">Sebutkan bahwa akun Anda terkena restricted. Comment di post mereka bisa mempercepat respon.</div>
-                </li>
-            </ol>
-            
-            <div class="note"><b>Follow up ke email LinkedIn yah</b></div>
-            
-            <h3>Contoh Pesan:</h3>
-            <div class="template">
-                <p>Hi, my LinkedIn account<br>
-                Email: [isi email Anda]<br>
-                Full name: [nama lengkap Anda]<br><br>
-                Telah dibatasi sementara. Saya telah mengikuti langkah-langkah verifikasi di layar, tetapi saya masih tidak dapat mengakses akun saya. Saya yakin ini mungkin kesalahan, karena saya mematuhi kebijakan LinkedIn. Bisakah Anda membantu meninjau dan memulihkan akun saya? Terima kasih!</p>
-                
-                <div class="warning">
-                    <b>Catatan:</b> Ubah dan kembangkan kata-kata ini untuk membuat versi unik Anda sendiri!
-                </div>
-            </div>
-        </div>
-        
-        <!-- Form Unrestrict 2 Content -->
-        <div id="form2" class="content-section hidden">
-            <h2>Form Pengaduan (Form 2)</h2>
-            
-            <ol>
-                <li>
-                    <b>Isi Form Pengaduan</b>: Gunakan tautan berikut untuk mengisi form pengaduan:
-                    <a href="https://www.linkedin.com/help/linkedin/ask/ppq?trk=li_tw_global_gco_care_twitter_social&amp;linkId=100000337626274" target="_blank">https://www.linkedin.com/help/linkedin/ask/ppq</a>
-                </li>
-                
-                <li>
-                    <b>Follow Up via Twitter</b>: Setelah mengirim form, hubungi Twitter LinkedIn untuk follow up:
-                    <a href="https://x.com/LinkedInHelp" target="_blank">https://x.com/LinkedInHelp</a>
-                    <div class="note">Tunggu balasan email selama 24-48 jam setelah mengirim form.</div>
-                </li>
-            </ol>
-            
-            <h3>Contoh Form:</h3>
-            <div class="template">
-                <div class="form-field">
-                    <label>Nama depan:</label>
-                    <span>Fadil</span>
-                </div>
-                
-                <div class="form-field">
-                    <label>Nama belakang:</label>
-                    <span>Jaidi</span>
-                </div>
-                
-                <div class="form-field">
-                    <label>Email:</label>
-                    <span>fadiljaidi00@gmail.com</span>
-                </div>
-                
-                <div class="form-field">
-                    <label>Ada yang dapat kami bantu hari ini?:</label>
-                    <span>Mendapatkan Kembali Akses ke Akun Saya</span>
-                </div>
-                
-                <div class="form-field">
-                    <label>Pertanyaan Anda:</label>
-                    <span>Hello, akun saya telah di batasi saya ingin memulihkannya, saya sudah mencoba untuk verifikasi ID akan tetapi terjadi kesalahan dan error, mohon segera di tindak lanjuti masalah ini. terimakasih</span>
-                </div>
-                
-                <div class="form-field">
-                    <label>Jenis masalah:</label>
-                    <span>Akun di batasi</span>
-                </div>
-                
-                <div class="warning">
-                    <b>Catatan:</b> Kembangkan kata-kata Anda sendiri, jangan 100% copas agar tidak dianggap spam!
-                </div>
-            </div>
-            
-            <h3>Tips Mengisi Form:</h3>
-            <ul>
-                <li>Gunakan informasi yang konsisten dengan data akun LinkedIn Anda</li>
-                <li>Jelaskan masalah dengan jelas dan sopan</li>
-                <li>Sertakan detail spesifik tentang kapan masalah mulai terjadi</li>
-                <li>Jangan lupa untuk follow up melalui Twitter setelah mengirim form</li>
-            </ul>
-            
-            <div class="note">
-                <b>Penting:</b> Setelah mengirim form, pantau email Anda secara berkala selama 24-48 jam ke depan untuk mendapatkan balasan dari tim LinkedIn.
-            </div>
-        </div>
-        
-        <!-- Form Unrestrict 3 Content -->
-        <div id="form3" class="content-section hidden">
-            <h2>Formulir Unrestrict (Form 3)</h2>
-            
-            <p>Gunakan link berikut untuk unrestrict:<br>
-            <a href="https://www.linkedin.com/help/linkedin/ask/TS-RHA" target="_blank">https://www.linkedin.com/help/linkedin/ask/TS-RHA</a></p>
-            
-            <h3>Terjemahan ke Bahasa Indonesia:</h3>
-            <ul>
-                <li><b>Nama sesuai KTP</b> - Isi dengan nama lengkap Anda</li>
-                <li><b>Akun siapa yang Anda laporkan?</b> - Pilih "Akun Saya"</li>
-                <li><b>Apakah akun Anda terkunci?</b> - Pilih "Iya"</li>
-                <li><b>Nama profil yang Anda laporkan</b> - Isi dengan nama yang lama di profil</li>
-                <li><b>Centang Email</b></li>
-                <li><b>Pemberitahuan masuk tidak dikenal dari perangkat tidak dikenal</b></li>
-            </ul>
-            
-            <h3>Contoh Pesan:</h3>
-            <div class="template">
-                <p><b>Bahasa Indonesia:</b><br>
-                Tolong bantu saya, sepertinya orang lain telah mengakses akun saya, melakukan aktivitas di luar kendali saya, mengubah gambar profil, mengubah nama, menambahkan konezioni, bantu saya agar bisa mengakses akun saya seperti biasa.</p>
-                
-                <p><b>English:</b><br>
-                Please help me, it seems like someone else has accessed my account, doing activities beyond my control, changing profile pictures, changing names, adding connections, help me to be able to access my account as usual.</p>
-                
-                <div class="warning">
-                    <b>Catatan:</b> Buat versi pesan Anda sendiri yang unik untuk menghindari spam!
-                </div>
-            </div>
-            
-            <!-- Screenshot Instructions -->
-            <div class="screenshot-instruction">
-                <h3>Lampirkan 2 Screenshot:</h3>
-                <ol class="screenshot-list">
-                    <li><b>Notifikasi Pergantian Profil</b> - Tangkapan layar notifikasi ketika profil diubah</li>
-                    <li><b>Notifikasi Pergantian Nama</b> - Tangkapan layar notifikasi ketika nama diubah</li>
-                </ol>
-                <p><i>Pastikan screenshot jelas terbaca dan menunjukkan detail penting</i></p>
-            </div>
-        </div>
-        
-        <!-- Form Unrestrict 4 Content -->
-        <div id="form4" class="content-section hidden">
-            <h2>Akun Restricted (Form 4)</h2>
-            
-            <ol>
-                <li>
-                    <b>Jika verifikasi tidak berhasil</b>: Jika Anda menerima email yang menyatakan akun Anda tetap dibatasi setelah verifikasi, ajukan banding menggunakan tautan ini: 
-                    <a href="https://www.linkedin.com/help/linkedin/ask/ts-f-appeal" target="_blank">https://www.linkedin.com/help/linkedin/ask/ts-f-appeal</a>
-                    <div class="note">Sertakan bukti identitas yang jelas dan konsisten dengan data akun Anda.</div>
-                </li>
-                
-                <li>
-                    <b>Jika Anda telah mengajukan Form</b>: Gunakan tautan ini untuk mengecek status: 
-                    <a href="https://lnkd.in/eqztE69g" target="_blank">https://lnkd.in/eqztE69g</a>
-                </li>
-                
-                <li>
-                    <b>Banding Restric permanen</b>: Jika akun Anda dibatasi secara permanen, gunakan tautan ini: 
-                    <a href="https://lnkd.in/gfTvtQAY" target="_blank">https://lnkd.in/gfTvtQAY</a>
-                    <div class="note">Beri penjelasan detail dan sopan tentang situasi Anda.</div>
-                </li>
-            </ol>
-            
-            <!-- Example Form -->
-            <h3>Contoh Form:</h3>
-            <div class="template">
-                <div class="form-field">
-                    <label>Nama depan:</label>
-                    <span>Fadil</span>
-                </div>
-                
-                <div class="form-field">
-                    <label>Nama belakang:</label>
-                    <span>Jaidi</span>
-                </div>
-                
-                <div class="form-field">
-                    <label>Email:</label>
-                    <span>fadiljaidi00@gmail.com</span>
-                </div>
-                
-                <div class="form-field">
-                    <label>Layanan pihak ke-3:</label>
-                    <span>NO</span>
-                </div>
-                
-                <div class="form-field">
-                    <label>Berbagi komputer:</label>
-                    <span>NO</span>
-                </div>
-                
-                <p><b>Deskripsi masalah:</b><br>
-                Mengunjungi profil, mengubah data profil, menambahkan koneksi, masuk di perangkat lain, masuk menggunakan VPN</p>
-                
-                <p>Saya mengakses akun saya menggunakan VPN beberapa waktu lalu, tetapi ketika saya mencoba masuk lagi, saya tidak dapat mengaksesnya. Ada kemungkinan akun saya telah dibobol atau diretas.</p>
-                
-                <div class="warning">
-                    <b>Catatan:</b> Ini hanya contoh, buat deskripsi unik Anda sendiri!
-                </div>
-            </div>
-            
-            <h3>Tips Tambahan</h3>
-            <ul>
-                <li><b>Patuhi panduan</b>: Pastikan Anda selalu mengikuti panduan komunitas LinkedIn</li>
-                <li><b>Data akurat</b>: Berikan informasi yang akurat dan konsisten selama proses verifikasi</li>
-                <li><b>Bersabar</b>: Respon LinkedIn bisa memakan waktu beberapa hari kerja</li>
-            </ul>
-        </div>
-    </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer style="margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center">
+      <div style="font-size:13px;color:rgba(230,238,248,0.6)">© <span id="year"></span> Unrestrict Fads</div>
+      <div style="font-size:13px;color:rgba(230,238,248,0.6)">Made with ♥</div>
+    </footer>
+  </div>
+
+  <script>
+    // Small interactive script
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('primary-action').addEventListener('click', function(e){
+      e.preventDefault();
+      alert('Terima kasih! Demo registrasi belum diaktifkan di template ini.');
+    });
+
+    // Simple mockup animation: change background gradient slowly
+    const mockup = document.getElementById('mockup');
+    let t = 0;
+    setInterval(()=> {
+      t += 0.01;
+      const r1 = Math.floor(60 + 40 * Math.sin(t*0.9));
+      const g1 = Math.floor(80 + 60 * Math.sin(t*1.1));
+      const b1 = Math.floor(140 + 60 * Math.cos(t*0.7));
+      mockup.style.background = `linear-gradient(180deg, rgb(${r1},${g1},${b1}), #012238)`;
+    }, 50);
+  </script>
+</body>
+</html>
