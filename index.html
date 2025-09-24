@@ -1,262 +1,453 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutorial Unrestrict LinkedIn</title>
-  <meta name="description" content="Panduan lengkap cara mengajukan banding akun LinkedIn yang terkena restricted dengan berbagai form resmi.">
-  <style>
-    :root {
-      --linkedin-blue: #0077B5;
-      --linkedin-dark-blue: #004182;
-      --linkedin-light-blue: #EFF6FA;
-      --linkedin-gray: #e0e0e0;
-    }
-
-    body {
-      font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 0 auto;
-      color: #333;
-      background-color: white;
-    }
-
-    /* Banner */
-    .top-banner {
-      background-color: var(--linkedin-dark-blue);
-      color: white;
-      padding: 12px 0;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .scrolling-text {
-      white-space: nowrap;
-      animation: scrollText 20s linear infinite;
-      font-weight: 600;
-      font-size: 16px;
-      display: inline-block;
-      padding-left: 100%;
-    }
-    @keyframes scrollText {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-
-    /* Header */
-    .header { text-align: center; margin: 20px 0; }
-    .logo {
-      width: 300px;
-      height: auto;
-      object-fit: contain;
-      margin: 0 auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .logo:hover { transform: scale(1.02); }
-
-    /* Floating CS Button */
-    .customer-service {
-      position: fixed;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1000;
-      animation: float 3s ease-in-out infinite;
-    }
-    .cs-icon {
-      height: 70px;
-      width: 70px;
-      cursor: pointer;
-      transition: all 0.3s;
-      filter: drop-shadow(0 0 10px rgba(0, 119, 181, 0.5));
-      border-radius: 50%;
-    }
-    .cs-icon:hover {
-      transform: scale(1.15) rotate(12deg);
-      filter: drop-shadow(0 0 15px rgba(0, 119, 181, 0.7));
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(-50%) translateY(0px); }
-      50% { transform: translateY(-50%) translateY(-18px); }
-    }
-
-    /* Content */
-    h1 {
-      color: var(--linkedin-blue);
-      text-align: center;
-      margin: 20px 0;
-      font-weight: 500;
-      font-size: 32px;
-    }
-    h2 {
-      color: var(--linkedin-dark-blue);
-      font-weight: 500;
-      margin-top: 30px;
-      font-size: 24px;
-      border-bottom: 1px solid var(--linkedin-gray);
-      padding-bottom: 8px;
-    }
-    h3 {
-      color: var(--linkedin-dark-blue);
-      font-weight: 500;
-      font-size: 20px;
-      margin-top: 25px;
-    }
-
-    .terms-box {
-      background-color: #fff3e0;
-      padding: 15px;
-      border-radius: 8px;
-      border-left: 4px solid #ffa000;
-      margin: 0 auto 30px;
-      font-size: 14px;
-      max-width: 800px;
-    }
-    .terms-title { color: #d32f2f; font-weight: 600; margin-bottom: 10px; text-align:center; }
-
-    .option-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-    .option-btn {
-      background-color: white;
-      color: var(--linkedin-blue);
-      border: 1px solid var(--linkedin-blue);
-      padding: 12px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      transition: all 0.3s;
-      min-width: 160px;
-      text-align: center;
-    }
-    .option-btn:hover { background-color: var(--linkedin-light-blue); }
-    .option-btn.active { background-color: var(--linkedin-blue); color: white; }
-
-    .content-section {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid var(--linkedin-gray);
-      margin-bottom: 30px;
-      opacity: 0;
-      display: none;
-      transition: opacity 0.3s ease;
-    }
-    .content-section.active {
-      display: block;
-      opacity: 1;
-    }
-
-    .note {
-      font-size: 14px;
-      color: #666;
-      font-style: italic;
-      margin-top: 5px;
-      padding: 10px;
-      background-color: #fff8e1;
-      border-left: 3px solid #ffc107;
-    }
-    .warning {
-      font-size: 14px;
-      color: #d32f2f;
-      font-weight: 500;
-      margin: 15px 0;
-      background-color: #ffebee;
-      padding: 10px;
-      border-radius: 4px;
-      border-left: 3px solid #d32f2f;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .logo { width: 220px; }
-      .customer-service {
-        top: auto; bottom: 20px; right: 15px;
-        animation: float-mobile 3s ease-in-out infinite;
-      }
-      @keyframes float-mobile {
-        0%,100%{ transform:translateY(0);}
-        50%{ transform:translateY(-10px);}
-      }
-      .cs-icon { height: 60px; width: 60px; }
-      .option-container { flex-direction: column; }
-      .option-btn { width: 100%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tutorial lengkap memulihkan akun LinkedIn yang dibatasi (restricted). Pilih form pengaduan resmi untuk unrestrict akun Anda.">
+    <meta name="keywords" content="unrestrict LinkedIn, akun restricted, tutorial LinkedIn, form pengaduan">
+    <title>Tutorial Unrestrict LinkedIn</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
+    <style>
+        :root {
+            --linkedin-blue: #0077B5;
+            --linkedin-dark-blue: #004182;
+            --linkedin-light-blue: #EFF6FA;
+            --linkedin-gray: #e0e0e0;
+        }
+        
+        /* Banner Styles */
+        .top-banner {
+            background-color: var(--linkedin-dark-blue);
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+        
+        .scrolling-text {
+            white-space: nowrap;
+            animation: scrollText 20s linear infinite;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-block;
+            padding-left: 100%;
+        }
+        
+        @keyframes scrollText {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+            color: #333;
+            background-color: white;
+        }
+        
+        .header {
+            position: relative;
+            text-align: center;
+            padding: 5px 0;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 350px;
+            height: 250px;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.3s ease;
+            background: linear-gradient(135deg, var(--linkedin-blue), var(--linkedin-light-blue)); /* Placeholder jika gambar gagal */
+            border-radius: 8px;
+        }
+        
+        .logo:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Floating Customer Service Button */
+        .customer-service {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .cs-icon {
+            height: 70px;
+            width: 70px;
+            cursor: pointer;
+            transition: all 0.3s;
+            filter: drop-shadow(0 0 10px rgba(0, 119, 181, 0.5));
+            border-radius: 50%;
+        }
+        
+        .cs-icon:hover {
+            transform: scale(1.15) rotate(12deg);
+            filter: drop-shadow(0 0 15px rgba(0, 119, 181, 0.7));
+            animation-play-state: paused;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(-50%) translateY(0px); }
+            50% { transform: translateY(-50%) translateY(-18px); }
+        }
+        
+        .main-content {
+            padding: 20px;
+        }
+        
+        h1 {
+            color: var(--linkedin-blue);
+            text-align: center;
+            margin: 20px 0 15px;
+            font-weight: 500;
+            font-size: 32px;
+        }
+        
+        .terms-box {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffa000;
+            margin: 0 auto 30px;
+            font-size: 14px;
+            max-width: 800px;
+        }
+        
+        .terms-title {
+            color: #d32f2f;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .terms-list {
+            margin-left: 20px;
+            padding-left: 5px;
+        }
+        
+        .terms-list li {
+            margin-bottom: 8px;
+        }
+        
+        h2 {
+            color: var(--linkedin-dark-blue);
+            font-weight: 500;
+            margin-top: 30px;
+            font-size: 24px;
+            border-bottom: 1px solid var(--linkedin-gray);
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            color: var(--linkedin-dark-blue);
+            font-weight: 500;
+            font-size: 20px;
+            margin-top: 25px;
+        }
+        
+        .option-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .option-btn {
+            background-color: white;
+            color: var(--linkedin-blue);
+            border: 1px solid var(--linkedin-blue);
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            min-width: 180px;
+            text-align: center;
+        }
+        
+        .option-btn:hover {
+            background-color: var(--linkedin-light-blue);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .option-btn.active {
+            background-color: var(--linkedin-blue);
+            color: white;
+        }
+        
+        .content-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--linkedin-gray);
+            margin-bottom: 30px;
+        }
+        
+        ol, ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+        
+        a {
+            color: var(--linkedin-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        b, strong {
+            font-weight: 600;
+            color: var(--linkedin-dark-blue);
+        }
+        
+        .template {
+            background-color: var(--linkedin-light-blue);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .copy-btn {
+            background: var(--linkedin-blue);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: var(--linkedin-dark-blue);
+        }
+        
+        .form-field {
+            margin-bottom: 15px;
+        }
+        
+        .form-field label {
+            display: inline-block;
+            width: 180px;
+            font-weight: 500;
+        }
+        
+        .form-field span {
+            font-weight: 400;
+        }
+        
+        .note {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+            padding: 10px;
+            background-color: #fff8e1;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .warning {
+            font-size: 14px;
+            color: #d32f2f;
+            font-weight: 500;
+            margin: 15px 0;
+            background-color: #ffebee;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 3px solid #d32f2f;
+        }
+        
+        .contact-box {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid var(--linkedin-blue);
+            margin: 20px 0;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            background-color: var(--linkedin-light-blue);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--linkedin-blue);
+            color: white;
+        }
+        
+        .social-icon {
+            height: 16px;
+            width: auto;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .screenshot-instruction {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .screenshot-list {
+            margin-left: 20px;
+        }
+        
+        .screenshot-list li {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .option-btn {
+                min-width: 150px;
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .logo {
+                width: 250px;
+                height: 167px;
+            }
+            
+            .customer-service {
+                top: auto;
+                bottom: 20px;
+                right: 15px;
+                transform: none;
+                animation: float-mobile 3s ease-in-out infinite;
+            }
+            
+            @keyframes float-mobile {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+            
+            .cs-icon {
+                height: 60px;
+                width: 60px;
+            }
+            
+            .option-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .option-btn {
+                width: 100%;
+            }
+            
+            .content-section {
+                padding: 15px;
+            }
+            
+            .form-field label {
+                width: 140px;
+            }
+            
+            .terms-box {
+                padding: 12px;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .terms-list {
+                margin-left: 15px;
+            }
+            
+            .scrolling-text {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Top Banner -->
-  <div class="top-banner">
-    <div class="scrolling-text">
-      📢 LinkedIn by Blass 📢
+    <!-- Top Banner with Scrolling Text -->
+    <div class="top-banner">
+        <div class="scrolling-text">
+            💫 LinkedIn by Fads  📢 Jika akun terkena restrict dan Anda berhasil memulihkannya, Anda berhak mendapatkan bonus $5 pada payment berikutnya (1x) 💫
+        </div>
     </div>
-  </div>
-
-  <!-- Header -->
-  <div class="header">
-    <img src="logo_saya.png" alt="Logo Unrestrict LinkedIn" class="logo">
-  </div>
-
-  <!-- Floating Customer Service -->
-  <div class="customer-service">
-    <a href="https://chat.whatsapp.com/BtUAmfwPrHn4SMxQJ56RmN?mode=ems_copy_c" target="_blank">
-      <img src="logo_cust.png" alt="Customer Service" class="cs-icon" title="Hubungi Customer Service">
-    </a>
-  </div>
-
-  <!-- Main -->
-  <div class="main-content">
-    <h1>Tutorial Unrestrict LinkedIn</h1>
-
-    <div class="terms-box">
-      <div class="terms-title">S&K: Mohon dimengerti</div>
-      <ul>
-        <li>Pilih Salah Satu Form dibawah ❗</li>
-        <li>Semua form tujuannya sama: pengaduan</li>
-        <li>Jangan spam, akan menambah durasi restrict</li>
-        <li>Proses butuh 5–14 hari kerja</li>
-        <li>Terimakasih, semangat 🙌</li>
-      </ul>
+    
+    <!-- Header with Logo -->
+    <div class="header">
+        <img src="https://via.placeholder.com/350x250/0077B5/FFFFFF?text=Unrestrict+LinkedIn" alt="Logo Tutorial Unrestrict LinkedIn - Ikon platform profesional" class="logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none; background: linear-gradient(135deg, var(--linkedin-blue), var(--linkedin-light-blue)); border-radius: 8px; width: 350px; height: 250px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">Unrestrict LinkedIn</div>
     </div>
-
-    <!-- Tabs -->
-    <div class="option-container">
-      <button class="option-btn active" onclick="showContent('form1', this)">Form Unrestrict 1</button>
-      <button class="option-btn" onclick="showContent('form2', this)">Form Unrestrict 2</button>
-      <button class="option-btn" onclick="showContent('form3', this)">Form Unrestrict 3</button>
-      <button class="option-btn" onclick="showContent('form4', this)">Form Unrestrict 4</button>
+    
+    <!-- Floating Customer Service Button -->
+    <div class="customer-service">
+        <a href="https://chat.whatsapp.com/BtUAmfwPrHn4SMxQJ56RmN" target="_blank" aria-label="Gabung Grup WhatsApp Unrestrict by Fads untuk bantuan lebih lanjut">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Ikon WhatsApp Customer Service" class="cs-icon" title="Hubungi Customer Service via WhatsApp">
+        </a>
     </div>
-
-    <!-- Example Sections -->
-    <div id="form1" class="content-section active">
-      <h2>Tutorial Open Restrict (Form 1)</h2>
-      <div class="warning">Contoh pesan harus diubah agar tidak terdeteksi spam.</div>
-      <p><b>Reset Password:</b> Coba melalui <a href="https://www.linkedin.com/uas/request-password-reset" target="_blank">tautan reset password</a>.</p>
-    </div>
-
-    <div id="form2" class="content-section">
-      <h2>Form Pengaduan (Form 2)</h2>
-      <p>Gunakan tautan resmi: <a href="https://www.linkedin.com/help/linkedin/ask/ppq" target="_blank">Form Unrestrict 2</a></p>
-    </div>
-
-    <div id="form3" class="content-section">
-      <h2>Formulir Unrestrict (Form 3)</h2>
-      <p>Tautan: <a href="https://www.linkedin.com/help/linkedin/ask/TS-RHA" target="_blank">Form Unrestrict 3</a></p>
-    </div>
-
-    <div id="form4" class="content-section">
-      <h2>Akun Restricted (Form 4)</h2>
-      <p>Ajukan banding via <a href="https://www.linkedin.com/help/linkedin/ask/ts-f-appeal" target="_blank">tautan appeal</a>.</p>
-    </div>
-  </div>
-<div id="form1" class="content-section">
+    
+    <div class="main-content">
+        <h1>Tutorial Unrestrict LinkedIn</h1>
+        
+        <!-- Terms and Conditions Box -->
+        <div class="terms-box">
+            <div class="terms-title">
+                <span>S&K: Mohon dimengerti</span>
+            </div>
+            <ul class="terms-list">
+                <li>Pilih Salah Satu Form dibawah ❗</li>
+                <li>Setiap form sama aja, yaitu melakukan pengaduan</li>
+                <li>Jangan spam form, yang akan menambah durasi restric kalian lebih lama</li>
+                <li>Harus lebih sabar, karna setiap case yang berjalan, perlu waktu 5 - 14 hari kerja untuk menyelesaikan laporan kalian</li>
+                <li>Terimakasih, semangat guys 🙌</li>
+            </ul>
+        </div>
+        
+        <div class="option-container">
+            <button class="option-btn active" onclick="showContent('form1', this)" aria-label="Pilih Form Unrestrict 1">Form Unrestrict 1</button>
+            <button class="option-btn" onclick="showContent('form2', this)" aria-label="Pilih Form Unrestrict 2">Form Unrestrict 2</button>
+            <button class="option-btn" onclick="showContent('form3', this)" aria-label="Pilih Form Unrestrict 3">Form Unrestrict 3</button>
+            <button class="option-btn" onclick="showContent('form4', this)" aria-label="Pilih Form Unrestrict 4">Form Unrestrict 4</button>
+        </div>
+        
+        <!-- Form Unrestrict 1 Content -->
+        <div id="form1" class="content-section">
             <h2>Tutorial Open Restrict (Form 1)</h2>
             
             <div class="warning">
@@ -266,63 +457,10 @@
             <ol>
                 <li>
                     <b>Reset Password</b>: Coba ke halaman change password melalui link ini 
-                    <a href="https://www.linkedin.com/uas/request-password-reset" target="_blank">https://www.linkedin.com/uas/request-password-reset</a>.
+                    <a href="https://www.linkedin.com/uas/request-password-reset" target="_blank" aria-label="Reset password LinkedIn">https://www.linkedin.com/uas/request-password-reset</a>.
                     <div class="note">Anda akan diminta verifikasi identitas (KYC). Jika berhasil, Anda akan menerima email konfirmasi. Proses ini memakan waktu 24-72 jam tergantung akun.</div>
                 </li>
                 
                 <li>
                     <b>Form Pengaduan</b>: Jika langkah pertama tidak berhasil, isi form pengaduan di 
-                    <a href="https://lnkd.in/gfTvtQAY" target="_blank">https://lnkd.in/gfTvtQAY</a>
-                </li>
-                
-                <li>
-                    <b>Hubungi Support</b>: Kirim DM ke media sosial LinkedIn:
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/linkedin?igsh=OG54NHM1azRlN3My" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon">
-                            Instagram
-                        </a>
-                        <a href="https://www.facebook.com/share/16vVVrzcRR/" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="social-icon">
-                            Facebook
-                        </a>
-                        <a href="https://x.com/LinkedInHelp?t=RfGkWEYIkaci9mjQEXK6lQ&amp;s=09" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter" class="social-icon">
-                            Twitter
-                        </a>
-                    </div>
-                    <div class="note">Sebutkan bahwa akun Anda terkena restricted. Comment di post mereka bisa mempercepat respon.</div>
-                </li>
-            </ol>
-            
-            <div class="note"><b>Follow up ke email LinkedIn yah</b></div>
-            
-            <h3>Contoh Pesan:</h3>
-            <div class="template">
-                <p>Hi, my LinkedIn account<br>
-                Email: [isi email Anda]<br>
-                Full name: [nama lengkap Anda]<br><br>
-                Telah dibatasi sementara. Saya telah mengikuti langkah-langkah verifikasi di layar, tetapi saya masih tidak dapat mengakses akun saya. Saya yakin ini mungkin kesalahan, karena saya mematuhi kebijakan LinkedIn. Bisakah Anda membantu meninjau dan memulihkan akun saya? Terima kasih!</p>
-                
-                <div class="warning">
-                    <b>Catatan:</b> Ubah dan kembangkan kata-kata ini untuk membuat versi unik Anda sendiri!
-                </div>
-            </div>
-        </div>
-  <script>
-    function showContent(contentId, clickedButton) {
-      // hide all sections
-      document.querySelectorAll('.content-section').forEach(sec => {
-        sec.classList.remove('active');
-      });
-      // reset buttons
-      document.querySelectorAll('.option-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      // show selected
-      document.getElementById(contentId).classList.add('active');
-      clickedButton.classList.add('active');
-    }
-  </script>
-</body>
-</html>
+                    <a href="https://lnkd.in/gfTvtQAY" target="_blank" aria-label="Form pengaduan LinkedIn">https://lnkd
